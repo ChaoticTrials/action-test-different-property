@@ -1,0 +1,37 @@
+name: 'action-test-different-property'
+description: 'An action for testing a codebase with different properties'
+author: 'MelanX'
+
+# Define your inputs here.
+inputs:
+  gradle-property:
+    required: true
+    description: 'The Gradle property to modify'
+  gradle-value:
+    required: true
+    description: 'The value to set for the Gradle property'
+  gradle-task:
+    required: false
+    description: 'The Gradle task to run'
+    default: 'build'
+  github-token:
+    required: false
+    description:
+      'GitHub token for creating an issue, defaults to ${{ env.GITHUB_TOKEN }}'
+  properties-file:
+    required: true
+    description: 'The file where the property should be set/replaced'
+    default: ''
+  issue-title:
+    required: true
+    description: 'The title of the issue'
+  issue-comment:
+    required: false
+    description: 'The main body of the issue'
+  issue-labels:
+    required: false
+    description: 'A comma separated list of labels'
+
+runs:
+  using: node20
+  main: dist/index.js
