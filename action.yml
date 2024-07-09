@@ -17,7 +17,8 @@ inputs:
   github-token:
     required: false
     description:
-      'GitHub token for creating an issue, defaults to ${{ env.GITHUB_TOKEN }}'
+      'GitHub token for creating an issue, defaults to ${{ secrets.GITHUB_TOKEN
+      }}'
   properties-file:
     required: true
     description: 'The file where the property should be set/replaced'
