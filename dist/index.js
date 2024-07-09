@@ -30481,8 +30481,8 @@ async function run() {
         core.info(`Set "${settings.gradleProperty}=${settings.gradleValue}" in ${settings.propertiesFile}`);
         // Execute task
         try {
-            await (0, exec_1.exec)('chmod +x gradlew');
-            await (0, exec_1.exec)(`gradlew ${settings.gradleTask}`);
+            await (0, exec_1.exec)('chmod +x ./gradlew');
+            await (0, exec_1.exec)(`./gradlew ${settings.gradleTask}`);
             core.info(`Gradle task ${settings.gradleTask} completed successfully`);
         }
         catch (error) {
