@@ -34,7 +34,8 @@ export async function run(): Promise<void> {
 
     // Execute task
     try {
-      await exec(`chmod +x gradlew && ./gradlew ${settings.gradleTask}`);
+      await exec('chmod +x gradlew');
+      await exec(`gradlew ${settings.gradleTask}`);
       core.info(`Gradle task ${settings.gradleTask} completed successfully`);
     } catch (error) {
       core.setFailed(`Gradle task '${settings.gradleTask}' failed`);
