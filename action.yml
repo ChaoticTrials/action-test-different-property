@@ -16,9 +16,8 @@ inputs:
     default: 'build'
   github-token:
     required: false
-    description:
-      'GitHub token for creating an issue, defaults to ${{ secrets.GITHUB_TOKEN
-      }}'
+    description: 'GitHub token for creating an issue'
+    default: '${secrets.GITHUB_TOKEN}'
   properties-file:
     required: true
     description: 'The file where the property should be set/replaced'
