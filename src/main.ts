@@ -26,6 +26,12 @@ export async function run(): Promise<void> {
     const propertiesMap: Map<string, string> = readProperties(
       settings.propertiesFile
     );
+
+    if (propertiesMap.get(settings.gradleProperty) == settings.gradleValue) {
+      core.info('Property already set. Skipping!');
+      return;
+    }
+
     propertiesMap.set(settings.gradleProperty, settings.gradleValue);
     writeProperties(settings.propertiesFile, propertiesMap);
     core.info(

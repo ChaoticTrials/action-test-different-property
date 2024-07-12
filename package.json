@@ -1,7 +1,7 @@
 {
   "name": "action-test-different-property",
   "description": "An action for testing a codebase with different properties.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "MelanX",
   "private": true,
   "homepage": "https://github.com/ChaoticTrials/action-test-different-property",

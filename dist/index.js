@@ -30476,6 +30476,10 @@ async function run() {
         };
         // Modify properties
         const propertiesMap = readProperties(settings.propertiesFile);
+        if (propertiesMap.get(settings.gradleProperty) == settings.gradleValue) {
+            core.info('Property already set. Skipping!');
+            return;
+        }
         propertiesMap.set(settings.gradleProperty, settings.gradleValue);
         writeProperties(settings.propertiesFile, propertiesMap);
         core.info(`Set "${settings.gradleProperty}=${settings.gradleValue}" in ${settings.propertiesFile}`);
