@@ -38,7 +38,7 @@ export async function run(): Promise<void> {
       await exec(`./gradlew ${settings.gradleTask}`);
       core.info(`Gradle task ${settings.gradleTask} completed successfully`);
     } catch (error) {
-      core.setFailed(`Gradle task '${settings.gradleTask}' failed`);
+      core.info(`Gradle task '${settings.gradleTask}' failed`);
 
       // Create an issue if the task fails
       const octokit = github.getOctokit(settings.githubToken);
